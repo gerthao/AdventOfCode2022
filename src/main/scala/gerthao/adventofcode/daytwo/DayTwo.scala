@@ -9,8 +9,9 @@ object DayTwo:
   type Score    = Int
   type Game     = List[Decision]
   def main(args: Array[String]): Unit =
-    playGame(Opponent(), Player(), Outcome(), readGame("Game"))
-    playGamePartTwo(Opponent(), Player(), Outcome(), readGame("Game"))
+    val gameComponents = (Opponent(), Player(), Outcome(), readGame("Game"))
+    gameComponents |> playGame
+    gameComponents |> playGamePartTwo
   end main
 
   private def playGame(opponent: Opponent, player: Player, outcome: Outcome, game: Game): Score =
