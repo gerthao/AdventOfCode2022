@@ -8,6 +8,7 @@ object DayTwo:
   type Decision = (String, String)
   type Score    = Int
   type Game     = List[Decision]
+
   def main(args: Array[String]): Unit =
     val gameComponents = (Opponent(), Player(), Outcome(), readGame("Game"))
     gameComponents |> playGame
