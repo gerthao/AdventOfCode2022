@@ -18,16 +18,16 @@ object DayThree:
       .map { line => line.splitAt(line.length / 2) }
       .map { case (first, second) => (first.toSet intersect second.toSet).head }
       .map { char => priorityMap.getOrElse(char, 0) }
-      .toVector
-  ).sum
+      .sum
+  )
 
   private def getPrioritySumPartTwo(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/day_three/input.txt")(
     _.getLines()
       .grouped(3)
       .map (_.map(_.toSet).reduce(_ intersect _).head)
       .map { char => priorityMap.getOrElse(char, 0) }
-      .toVector
-  ).sum
+      .sum
+  )
 
   private def createPriorityMap: Map[Char, Int] =
     val first          = 'a' to 'z'
