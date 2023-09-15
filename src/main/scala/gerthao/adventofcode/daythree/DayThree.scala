@@ -24,7 +24,7 @@ object DayThree:
   private def getPrioritySumPartTwo(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/day_three/input.txt")(
     _.getLines()
       .grouped(3)
-      .map (_.map(_.toSet).reduce(_ intersect _).head)
+      .map { _.map(_.toSet).reduce(_ intersect _).head }
       .map { char => priorityMap.getOrElse(char, 0) }
       .sum
   )
