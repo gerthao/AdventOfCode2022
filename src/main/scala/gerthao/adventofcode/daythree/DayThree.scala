@@ -28,6 +28,7 @@ object DayThree:
       .map { char => priorityMap.getOrElse(char, 0) }
       .toVector
   ).sum
+
   private def createPriorityMap: Map[Char, Int] =
     val first           = 'a' to 'z'
     val first_priority  = 1 to 26
