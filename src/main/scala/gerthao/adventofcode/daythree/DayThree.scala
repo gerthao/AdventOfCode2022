@@ -31,12 +31,12 @@ object DayThree:
 
   private def createPriorityMap: Map[Char, Int] =
     val first           = 'a' to 'z'
-    val first_priority  = 1 to 26
+    val firstPriority  = 1 to 26
     val second          = 'A' to 'Z'
-    val second_priority = 27 to 52
+    val secondPriority = 27 to 52
 
-    val f = first zip first_priority
-    val s = second zip second_priority
+    val f = first zip firstPriority
+    val s = second zip secondPriority
 
     (f ++ s).toMap
 
