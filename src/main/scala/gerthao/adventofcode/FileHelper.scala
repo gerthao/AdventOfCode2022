@@ -10,3 +10,10 @@ object FileHelper:
 
     file.close()
     result
+
+  def getLines(filePath: String): Seq[String] =
+    val file = Source.fromFile(filePath)
+    val result = file.getLines().toSeq
+
+    file.close()
+    result
