@@ -30,9 +30,9 @@ object DayThree:
   ).sum
 
   private def createPriorityMap: Map[Char, Int] =
-    val first           = 'a' to 'z'
+    val first          = 'a' to 'z'
     val firstPriority  = 1 to 26
-    val second          = 'A' to 'Z'
+    val second         = 'A' to 'Z'
     val secondPriority = 27 to 52
 
     val f = first zip firstPriority
