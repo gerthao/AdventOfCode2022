@@ -6,6 +6,7 @@ import gerthao.adventofcode.FileHelper.*
 object DayFour:
   type AssignmentPair          = (Assignment, Assignment)
   type AssignmentCountCriteria = Iterator[AssignmentPair] => Int
+
   @main def run(): Unit =
     val mainLogic = (criteria: AssignmentCountCriteria) => read("src/main/resources/dayfour/input.txt")(
       _.getLines() |> parseData |> criteria
