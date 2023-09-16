@@ -22,7 +22,7 @@ object DayOne:
       else acc :+ left.map(_.toInt).toList
     end extractValues
 
-    val reader = Source.fromFile("src/main/resources/day_one/ElfFoodCalorieList.txt")
+    val reader = Source.fromFile("src/main/resources/dayone/ElfFoodCalorieList.txt")
     val result = extractValues(reader.getLines)
 
     reader.close

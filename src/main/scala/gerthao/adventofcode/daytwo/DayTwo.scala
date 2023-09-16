@@ -54,7 +54,7 @@ object DayTwo:
   end playGamePartTwo
 
   private def readGame(fileName: String): Game =
-    val reader = Source.fromFile(s"src/main/resources/day_two/$fileName.txt")
+    val reader = Source.fromFile(s"src/main/resources/daytwo/$fileName.txt")
     val decisions = reader.getLines()
       .map(_.split(" "))
       .map { case Array(opponent, player) => opponent -> player }

@@ -12,7 +12,7 @@ object DayThree:
     println(s"[Pt. 1] Sum of priorities = $prioritySumPartOne")
     println(s"[Pt. 2] Sum of priorities = $prioritySumPartTwo")
 
-  private def getPrioritySumPartOne(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/day_three/input.txt")(
+  private def getPrioritySumPartOne(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/daythree/input.txt")(
     _.getLines()
       .map { line => line.splitAt(line.length / 2) }
       .map { case (first, second) => (first.toSet intersect second.toSet).headOption }
@@ -20,7 +20,7 @@ object DayThree:
       .sum
   )
 
-  private def getPrioritySumPartTwo(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/day_three/input.txt")(
+  private def getPrioritySumPartTwo(priorityMap: Map[Char, Int]): Int = FileHelper.read("src/main/resources/daythree/input.txt")(
     _.getLines()
       .grouped(3)
       .map { _.map(_.toSet).reduce(_ intersect _).headOption }
