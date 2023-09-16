@@ -15,7 +15,7 @@ object DayFour:
     val firstCriteria: AssignmentCountCriteria  = _.count { case (first, second) => (first contains second) || (second contains first) }
     val secondCriteria: AssignmentCountCriteria = _.count { _ overlaps _ }
 
-    firstCriteria |> mainLogic |> (result => println(s"[Part One] Assignment Count: $result"))
+    firstCriteria  |> mainLogic |> (result => println(s"[Part One] Assignment Count: $result"))
     secondCriteria |> mainLogic |> (result => println(s"[Part Two] Assignment Count: $result"))
 
   private def parseData(data: Iterator[String]): Iterator[AssignmentPair] =
