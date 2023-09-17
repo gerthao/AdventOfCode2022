@@ -11,6 +11,7 @@ object DayFive:
   type Moves       = Seq[String]
   type BoxStack    = Seq[Char]
   type Boxes       = Seq[BoxStack]
+
   @main def run(): Unit =
     FileHelper.read("src/main/resources/dayfive/input.txt")(source =>
       val (boxes, moves) = parseData(source)
