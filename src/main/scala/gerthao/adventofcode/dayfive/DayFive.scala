@@ -1,11 +1,9 @@
 package gerthao.adventofcode.dayfive
 
-import gerthao.adventofcode.PipeOps.|>
-
-import scala.collection.mutable.Stack
 import gerthao.adventofcode.FileHelper
-
+import gerthao.adventofcode.PipeOps.|>
 import scala.io.BufferedSource
+
 object DayFive:
   type CraneAction = Seq[Char] => Seq[Char]
   type Moves       = Seq[String]
