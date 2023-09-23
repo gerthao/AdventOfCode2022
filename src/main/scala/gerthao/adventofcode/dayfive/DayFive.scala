@@ -20,6 +20,7 @@ object DayFive:
       crateMover9000Action |> runMoves(boxes, moves) |> (result => println(s"[Pt 1] Result of Mover 9000: ${result.mkString("")}"))
       crateMover9001Action |> runMoves(boxes, moves) |> (result => println(s"[Pt 2] Result of Mover 9001: ${result.mkString("")}"))
     )
+  end run
 
   private def parseData(source: BufferedSource): (Boxes, Moves) =
     lazy val generateIndices: Int => LazyList[Int] = (start: Int) => start #:: generateIndices(start + 4)
@@ -28,7 +29,7 @@ object DayFive:
         generateIndices(1)
           .takeWhile(_ < b.length)
           .map(b.charAt)
-          .map(c => if c == ' ' then None else Some(c))
+          .map(c => Option.when(c != ' ')(c))
       }.map { b => if b.length >= 9 then b else b ++ Seq.fill(9 - b.length)(None) }
       .toSeq
       .transpose
